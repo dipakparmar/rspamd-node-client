@@ -1,8 +1,8 @@
 # @dipakparmar/rspamd-client
 
-[![npm version](https://img.shields.io/npm/v/@dipakparmar/rspamd-client.svg)](https://www.npmjs.com/package/@dipakparmar/rspamd-client)
-[![Downloads/week](https://img.shields.io/npm/dw/@dipakparmar/rspamd-client)](https://www.npmjs.com/package/@dipakparmar/rspamd-client)
-[![License](https://img.shields.io/npm/l/@dipakparmar/rspamd-client.svg)](https://github.com/dipakparmar/rspamd-node-client/blob/main/LICENSE)
+[![NPM Version](https://img.shields.io/npm/v/%40dipakparmar%2Frspamd-client)](https://www.npmjs.com/package/@dipakparmar/rspamd-client)
+[![Downloads/week](https://img.shields.io/npm/dw/%40dipakparmar%2Frspamd-client?logo=npm&label=npm%20downloads&cacheSeconds=5)](https://www.npmjs.com/package/@dipakparmar/rspamd-client)
+[![License](https://img.shields.io/npm/l/%40dipakparmar%2Frspamd-client)](https://github.com/dipakparmar/rspamd-node-client/blob/main/LICENSE)
 
 A TypeScript Node.js client for Rspamd.
 
