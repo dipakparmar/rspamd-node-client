@@ -12,6 +12,8 @@
   "scripts": {
     "build": "tsc",
     "test": "node --loader ts-node/esm --no-warnings --test tests/*.test.ts",
+    "lint:check": "eslint -c eslint.config.js src/**/*.ts",
+    "lint:fix": "eslint -c eslint.config.js src/**/*.ts --fix",
     "prepublishOnly": "npm run build",
     "prepare": "npm run build"
   },
@@ -34,9 +36,13 @@
   },
   "homepage": "https://github.com/dipakparmar/rspamd-node-client#readme",
   "devDependencies": {
+    "@eslint/js": "^9.8.0",
     "@types/node": "^22.1.0",
+    "eslint": "^9.8.0",
+    "globals": "^15.9.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.0.0"
   },
   "engines": {
     "node": ">=20.0.0"
