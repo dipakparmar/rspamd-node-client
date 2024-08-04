@@ -99,4 +99,13 @@ export class RspamdClient {
     }
   }
 
+  /**
+   * Checks a message for spam using Rspamd's check v2 endpoint.
+   *
+   * @param message - The message to check for spam.
+   * @returns A Promise that resolves with the check results.
+   */
+  async check(message: string): Promise<RspamdCheckV2Response> {
+    return this.makeRequest<RspamdCheckV2Response>("/checkv2", "POST", message);
+  }
 }
