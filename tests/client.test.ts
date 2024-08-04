@@ -86,4 +86,63 @@ describe("RspamdClient", () => {
     );
   });
 
+  test("symbols method sends POST request to /symbols", async () => {
+    const mockResponse = {
+      ok: true,
+      json: async () => ({ symbols: ["symbol1", "symbol2"] }),
+    } as Response;
+
+    let fetchArgs: [string, RequestInit] | null = null;
+    globalThis.fetch = async (input: RequestInfo | URL, init?: RequestInit) => {
+      fetchArgs = [input as string, init as RequestInit];
+      return mockResponse;
+    };
+
+    const result = await client.symbols("Test message");
+
+    assert.deepEqual(result, { symbols: ["symbol1", "symbol2"] });
+    assert.equal(fetchArgs?.[0], "http://localhost:11333/symbols");
+    assert.equal(fetchArgs?.[1].method, "POST");
+    assert.equal(fetchArgs?.[1].body, "Test message");
+  });
+
+  test("learnSpam method sends POST request to /learnspam", async () => {
+    const mockResponse = {
+      ok: true,
+      json: async () => ({ success: true }),
+    } as Response;
+
+    let fetchArgs: [string, RequestInit] | null = null;
+    globalThis.fetch = async (input: RequestInfo | URL, init?: RequestInit) => {
+      fetchArgs = [input as string, init as RequestInit];
+      return mockResponse;
+    };
+
+    const result = await client.learnSpam("Test message");
+
+    assert.deepEqual(result, { success: true });
+    assert.equal(fetchArgs?.[0], "http://localhost:11333/learnspam");
+    assert.equal(fetchArgs?.[1].method, "POST");
+    assert.equal(fetchArgs?.[1].body, "Test message");
+  });
+
+  test("learnHam method sends POST request to /learnham", async () => {
+    const mockResponse = {
+      ok: true,
+      json: async () => ({ success: true }),
+    } as Response;
+
+    let fetchArgs: [string, RequestInit] | null = null;
+    globalThis.fetch = async (input: RequestInfo | URL, init?: RequestInit) => {
+      fetchArgs = [input as string, init as RequestInit];
+      return mockResponse;
+    };
+
+    const result = await client.learnHam("Test message");
+
+    assert.deepEqual(result, { success: true });
+    assert.equal(fetchArgs?.[0], "http://localhost:11333/learnham");
+    assert.equal(fetchArgs?.[1].method, "POST");
+    assert.equal(fetchArgs?.[1].body, "Test message");
+  });
 });

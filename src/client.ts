@@ -108,4 +108,34 @@ export class RspamdClient {
   async check(message: string): Promise<RspamdCheckV2Response> {
     return this.makeRequest<RspamdCheckV2Response>("/checkv2", "POST", message);
   }
+
+  /**
+   * Retrieves the symbols for a given message from Rspamd.
+   *
+   * @param message - The message to retrieve symbols for.
+   * @returns A Promise that resolves with the symbols associated with the message.
+   */
+  async symbols(message: string): Promise<any> {
+    return this.makeRequest("/symbols", "POST", message);
+  }
+
+  /**
+   * Submits a message to Rspamd for learning as spam.
+   *
+   * @param message - The spam message to be learned.
+   * @returns A Promise that resolves with the result of the learning process.
+   */
+  async learnSpam(message: string): Promise<any> {
+    return this.makeRequest("/learnspam", "POST", message);
+  }
+
+  /**
+   * Submits a message to Rspamd for learning as ham (not spam).
+   *
+   * @param message - The ham message to be learned.
+   * @returns A Promise that resolves with the result of the learning process.
+   */
+  async learnHam(message: string): Promise<any> {
+    return this.makeRequest("/learnham", "POST", message);
+  }
 }
