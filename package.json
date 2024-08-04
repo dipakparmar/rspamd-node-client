@@ -2,7 +2,13 @@
   "name": "@dipakparmar/rspamd-client",
   "version": "0.0.1-alpha",
   "description": "A TypeScript Node.js client interacting for Rspamd",
+  "main": "dist/src/index.js",
+  "module": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "type": "module",
+  "files": [
+    "dist/src"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "node --loader ts-node/esm --no-warnings --test tests/*.test.ts",
