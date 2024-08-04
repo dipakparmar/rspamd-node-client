@@ -1,6 +1,6 @@
 {
   "name": "@dipakparmar/rspamd-client",
-  "version": "0.0.1-alpha",
+  "version": "0.0.1-beta",
   "description": "A TypeScript Node.js client interacting for Rspamd",
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
